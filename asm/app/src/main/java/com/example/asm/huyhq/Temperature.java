@@ -1,14 +1,14 @@
 package com.example.asm.huyhq;
 
 public class Temperature {
-    private String Value;
+    private Double Value;
     private String Unit;
 
-    public String getValue() {
+    public Double getValue() {
         return Value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Double value) {
         Value = value;
     }
 

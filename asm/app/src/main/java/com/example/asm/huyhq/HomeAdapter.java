@@ -18,6 +18,9 @@ public class HomeAdapter extends RecyclerView.Adapter {
     Activity activity;
     List<Weather> listData;
 
+    ConvertDateTime convert = new ConvertDateTime();
+    SetWeatherIcon setIcon = new SetWeatherIcon();
+
     public HomeAdapter(Activity activity, List<Weather> listData) {
         this.activity = activity;
         this.listData = listData;
@@ -40,9 +43,9 @@ public class HomeAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Weather model = listData.get(position);
         HomeHolder vh = (HomeHolder) holder;
-        vh.tvTime.setText(model.convertTime(DateTime));
-        vh.tvTemp.setText(model.getTemperature().getValue());
-//        Glide.with(activity).load(model.getImage()).into(vh.ivCover);
+        vh.tvTime.setText(convert.convertTime(model.getDateTime()));
+        vh.tvTemp.setText(model.getTemperature().getValue().toString());
+        Glide.with(activity).load(setIcon.setIcon(model.getWeatherIcon())).into(vh.ivCover);
 
     }
 
@@ -53,13 +56,13 @@ public class HomeAdapter extends RecyclerView.Adapter {
 
     public class HomeHolder extends RecyclerView.ViewHolder {
         TextView tvTime, tvTemp;
-//        ImageView ivCover;
+        ImageView ivCover;
 
         public HomeHolder(@NonNull View itemView) {
             super(itemView);
             tvTime = itemView.findViewById(R.id.tvTime);
             tvTemp = itemView.findViewById(R.id.tvTemp);
-//            ivCover = itemView.findViewById(R.id.ivCover);
+            ivCover = itemView.findViewById(R.id.ivCover);
 
         }
     }

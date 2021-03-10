@@ -33,7 +33,7 @@ public class HomeActivity extends AppCompatActivity {
         adapter = new HomeAdapter(this, list);
 
         //B3: Layout Manager
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
 
         //B4: RecyclerView
         rvWeather = findViewById(R.id.rvWeather);

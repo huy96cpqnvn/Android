@@ -1,13 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".HomeActivity">
+    tools:context=".HomeActivity"
+    android:orientation="vertical"
+    android:background="@drawable/bg_weather">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hà Nội"
+        android:textSize="60sp"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/white"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tvIconPhrase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhiều mây"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/tvTemperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="27°"
+        android:textSize="110sp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/rvWeather" />
+        android:layout_height="wrap_content"
+        android:id="@+id/rvWeather"
+        android:layout_marginTop="20dp"/>
 
-</RelativeLayout>
+</LinearLayout>

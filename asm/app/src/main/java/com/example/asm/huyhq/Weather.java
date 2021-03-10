@@ -5,16 +5,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Weather {
-    private Date DateTime;
+    private String DateTime;
     private int WeatherIcon;
     private String IconPhrase;
     private Temperature Temperature;
 
-    public Date getDateTime() {
+    public String getDateTime() {
         return DateTime;
     }
 
-    public void setDateTime(Date dateTime) {
+    public void setDateTime(String dateTime) {
         DateTime = dateTime;
     }
 
@@ -41,19 +41,4 @@ public class Weather {
     public void setTemperature(com.example.asm.huyhq.Temperature temperature) {
         Temperature = temperature;
     }
-
-    public String convertTime(String inputTime) {
-        SimpleDateFormat inFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-        Date date = null;
-        try {
-            date = inFormat.parse(inputTime);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        SimpleDateFormat outFormat = new SimpleDateFormat("ha");
-        String goal = outFormat.format(date);
-        return goal;
-    }
-
-
 }
